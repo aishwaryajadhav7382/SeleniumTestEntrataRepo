@@ -32,7 +32,7 @@ public class ScheduleDemoPage {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[text()='Sign In'])[1]")));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		//js.executeScript("window.scrollBy(0,250)");
+		
 		System.out.println("scrolled until bottom");
 		
 		//click on Resident Pay option
@@ -73,6 +73,7 @@ public class ScheduleDemoPage {
 		driver.findElement(By.xpath("//button[text()='Schedule Demo']")).click();
 		
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='ValidMsgLastName']")));
+		//Verify Blank Field Validation
 		boolean errorstatus = driver.findElement(By.xpath("//div[@id='ValidMsgLastName']")).getText().contains("This field is required.");
 		Assert.assertTrue(errorstatus);
 		
