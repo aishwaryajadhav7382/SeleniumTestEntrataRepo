@@ -36,7 +36,7 @@ public class ScheduleDemoPage {
 		System.out.println("scrolled until bottom");
 		
 		//click on Resident Pay option
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//a[text()='ResidentPay'])[3]")));
+		
 		WebElement ResidentPay = driver.findElement(By.xpath("(//a[text()='ResidentPay'])[3]"));
 		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[text()='ResidentPay'])[3]")));
 		wait.until(ExpectedConditions.elementToBeClickable(ResidentPay));
