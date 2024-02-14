@@ -78,13 +78,7 @@ public class ApplyCareerPage {
 		WebElement addFile = driver.findElement(By.xpath("//input[@id='resume-upload-input']"));
 		// Mention the own path of the file location
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();", addFile);
-		//addFile.click();
-		// Add file method 
-//		System.out.println("resume btn click done");
-//		File filepath=new File("\ntwinelogin.jpg");
 		
-		//addFile.sendKeys("\ntwinelogin.jpg");
-		//addFile.sendKeys("ResourceFiles//AishwaryaResume.pdf");// For setting a profile picture
 		
 		File file = new File("src/test/resources/resourcefiles/AishwaryaResume.pdf");
 		addFile.sendKeys(file.getAbsolutePath());
