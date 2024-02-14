@@ -76,14 +76,14 @@ public class ApplyCareerPage {
 		driver.findElement(By.xpath("(//a[@href=\"https://jobs.lever.co/entrata/69768016-7a54-43b5-a991-38769661433d/apply\"])[2]")).click();
 		System.out.println("before resume btn click done");
 		WebElement addFile = driver.findElement(By.xpath("//input[@id='resume-upload-input']"));
-		// Mention the own path of the file location
+		
 		((JavascriptExecutor)driver).executeScript("arguments[0].click();", addFile);
 		
-		
+		// get Absolute path of the file to be uploaded
 		File file = new File("src/test/resources/resourcefiles/AishwaryaResume.pdf");
 		addFile.sendKeys(file.getAbsolutePath());
 		
-		//addFile.sendKeys("C:\\Users\\sshinde07\\Downloads\\advanced-selenium-webdriver-master\\advanced-selenium-webdriver-master\\BEGINNING\\advanced-selenium-webdriver\\ResourceFiles\\Aishwarya Jadhav- Resume.pdf\"");
+		// Verify File upload success notification
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='resume-upload-label'])[last()]")));
 		boolean ResumeUploadStatus=driver.findElement(By.xpath("(//div[@class='resume-upload-label'])[last()]")).getText().contains("Success!");
 		Assert.assertTrue(ResumeUploadStatus);
